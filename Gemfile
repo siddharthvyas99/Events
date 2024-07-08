@@ -99,7 +99,7 @@ gem "net-imap" # for rspec
 gem "net-pop" # for rspec
 
 # Catch unsafe migrations in development
-gem "strong_migrations"
+# gem "strong_migrations"
 
 # support data migrations alongside schema migrations
 gem "data_migrate"

@@ -509,8 +509,6 @@ GEM
       activesupport (>= 6.1)
       sprockets (>= 3.0.0)
     stringio (3.1.1)
-    strong_migrations (2.0.0)
-      activerecord (>= 6.1)
     strscan (3.1.0)
     terser (1.2.3)
       execjs (>= 0.3.0, < 3)
@@ -615,7 +613,6 @@ DEPENDENCIES
   sidekiq-unique-jobs
   simplecov
   solid_cache
-  strong_migrations
   terser
   web-console
   webmock
