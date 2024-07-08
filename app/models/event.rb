@@ -1,6 +1,7 @@
 
 class Event < ActiveRecord::Base
 	belongs_to :user
+  belongs_to :venue
 
   def event_url
     Rails.application.routes.url_helpers.event_url(self, host: host_for_env)
