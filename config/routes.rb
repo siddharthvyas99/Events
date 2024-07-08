@@ -13,5 +13,11 @@ Rails.application.routes.draw do
     resources :users
   end
 
+  resources :venues
+
+  resources :events do
+    resources :event_bookings
+  end
+
   root to: "home#index"
 end
