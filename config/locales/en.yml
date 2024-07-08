@@ -31,6 +31,7 @@ en:
   hello: "Hello world"
   resource:
     not_found: "%{resource_name} does not exist."
+    created: "The %{resource_name} is successfully created."
     saved: "The %{resource_name} is successfully saved."
     updated: "The %{resource_name} is successfully updated."
     deleted: "The %{resource_name} is successfully deleted."
