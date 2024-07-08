@@ -10,12 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_08_151250) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_08_153544) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
 
   create_table "data_migrations", primary_key: "version", id: :string, force: :cascade do |t|
+  end
+
+  create_table "event_bookings", force: :cascade do |t|
+    t.uuid "user_id", null: false
+    t.uuid "event_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_event_bookings_on_event_id"
+    t.index ["user_id"], name: "index_event_bookings_on_user_id"
   end
 
   create_table "events", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -75,6 +84,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_08_151250) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "event_bookings", "events"
+  add_foreign_key "event_bookings", "users"
   add_foreign_key "events", "users"
   add_foreign_key "permissions", "roles"
   add_foreign_key "permissions", "users"
