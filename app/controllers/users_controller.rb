@@ -18,12 +18,17 @@ class UsersController < ApplicationController
 	def update
 		if @user.update_attributes(user_params)
 			render notice: t("resource.updated", { resource_name: "User" })
+    else
+      render json: @user.errors, status: :unprocessable_entity
 		end
 	end
 
 	def destroy
-		@user.destroy
-		render notice: t("resource.deleted", { resource_name: "User" })
+		if @user.destroy
+      render notice: t("resource.deleted", { resource_name: "User" })
+    else
+      render json: @user.errors, status: :unprocessable_entity
+		end
 	end
 
 
