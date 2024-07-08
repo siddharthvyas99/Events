@@ -12,5 +12,5 @@ Setup
 - Clone repo and run ./bin/setup
 - The API only response can checked from browser/postman
 
-![Event Booking Diagram](docs/images/diagram.png)
+![Event Booking Diagram](https://github.com/siddharthvyas99/Events/blob/main/docs/images/Diagram.png)
 
