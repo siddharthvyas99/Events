@@ -4,7 +4,7 @@ class EventBookingsController < ApplicationController
   before_action :set_event_booking, only: [:show, :update, :destroy]
 
   def index
-    @event_bookings = EventBooking.all
+    @event_bookings = EventBooking.includes(:user, :event).all
     #Implement searching and pagination using Pagy gem
   end
 
